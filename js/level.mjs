@@ -102,7 +102,7 @@ export class Level {
         `;
         modal.appendChild(modalContent);
 
-        // Добавление модального окна в DOM
+        // Добавление модального окна
         document.body.appendChild(modal);
 
         // Закрытие модального окна при нажатии на кнопку "Продолжить"
@@ -121,12 +121,12 @@ export class Level {
     }
 
     startTimer() {
-        // Этот метод должен быть переопределен в подклассах
-        throw new Error("Method 'startTimer' must be implemented");
+        // ЭАбстрактный метод, должен быть определен в дочерних классах
+        throw new Error("Абстрактный метод, должен быть определен в дочерних классах");
     }
 
     display() {
         // Абстрактный метод, должен быть определен в дочерних классах
-        throw new Error("Abstract method 'display' must be implemented");
+        throw new Error("Абстрактный метод, должен быть определен в дочерних классах");
     }
 }

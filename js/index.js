@@ -8,7 +8,7 @@ if (viewRatingButton) {
 }
 
 
-//кнопка рейтинговой игры
+//РЕЙТИНГОВАЯ ИГРА
 document.addEventListener('DOMContentLoaded', () => {
     let selectedDifficulty = 0; // Устанавливаем по умолчанию
     const ratingMode = document.getElementById('rating-mode');
@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         startGameButton.addEventListener('click', () => {
-            startTrainingGame(selectedLevel, selectedDifficulty); // Вызов функции startRatingGame
+            startTrainingGame(selectedLevel, selectedDifficulty); // Вызов функции startTrainingGame
         });
     }
 

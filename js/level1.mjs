@@ -4,8 +4,11 @@ export class Level1 extends Level {
     display() {
         this.score = 0;
         this.addLevelCompleteHandler();
-        const shapes = ['circle', 'square', 'rhombus', 'ellipse'];
+        // Варианты форм разъёмов
+        const shapes = ['circle', 'square', 'rhombus', 'ellipse']; 
+        // Варианты цвета разъёмов
         const colors = ['yellow', 'pink', 'green', 'red', 'lightBlue', 'purple', 'blue', 'orange'];
+        // Описание уровня
         const description = `Ваша задача заключается в том, чтобы соединить проводами разъёмы одинакового цвета` + `${this.difficulty === 0 ? '.' : (this.difficulty === 1 ? ' и формы.' : ' и формы. Будьте внимательны: разъёмы будут периодически двигаться.')}` +  ` Главное – действовать быстро и аккуратно, ведь на выполнение уровня у Вас есть всего ` + `${this.difficulty === 0 ? '40' : (this.difficulty === 1 ? '35' : '30')}` + ` секунд. Игра закончится либо по истечении этого времени, либо когда все разъёмы будут использованы.<br><br>
         За каждое правильно выполненное соединение Вы получите 1 балл. Кроме того, за каждую сэкономленную секунду мы также начислим Вам дополнительный балл. Помните, время начнёт отсчитываться, как только Вы закроете это окно, так что будьте готовы к действию!<br><br>
         <strong>Управление:</strong><br>
@@ -31,14 +34,15 @@ export class Level1 extends Level {
             return pairs;
         }
 
+        // Показываем описание
         this.showDescription(description);
-        // Создаем выборку 
+        // Создаем выборку различных пар разъемов
         let divPairs = [];
         if (this.difficulty === 0)
             divPairs = generateUniquePairs(8, colors, ['circle']);
         else
             divPairs = generateUniquePairs(10, colors, shapes);
-        // Создание контейнера socketContainer
+        // Создание первого контейнера
         const socketContainer = document.createElement('div');
         socketContainer.id = 'container1';
         socketContainer.classList.add('socket-container');
@@ -66,7 +70,7 @@ export class Level1 extends Level {
             socketContainer2.appendChild(child);
         });
 
-        // Предполагается, что socketContainer будет добавлен в body или другой элемент DOM
+        // Добавляем элементы игры на страницу
         document.getElementById('game').appendChild(socketContainer);
         document.getElementById('game').appendChild(socketContainer2);
         document.getElementById("game").style.cssText = '';
@@ -74,6 +78,7 @@ export class Level1 extends Level {
         window.addEventListener('resize', () => {this.updateAllWires();});
         this.addDragAndDropHandlers();
 
+        // На сложном уровне сложности разъёмы двигаются 
         if (this.difficulty === 2)
         {
             let count = 0;
@@ -94,6 +99,7 @@ export class Level1 extends Level {
         }
     }
 
+    // Запускаем таймер на разное время в зависимости от сложности
     startTimer()
     {
         if (this.difficulty === 0)
