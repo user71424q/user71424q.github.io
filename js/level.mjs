@@ -46,7 +46,7 @@ export class Level {
                 else {
                     clearInterval(interval);
                 }
-            }, 100); // Скорость анимации можно настроить
+            }, 50); // Скорость анимации можно настроить
         };
         // Создание основного модального окна
         const modal = document.createElement('div');

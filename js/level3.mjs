@@ -11,9 +11,21 @@ export class Level3 extends Level {
             }
             return array;
         }
-        this.score = 51;
+
+
+        const description = `Ваша задача заключается в том, чтобы собрать паззл, представляющий собой элекстрическую схему. Каждый фрагмент паззла представляет элемент схемы: кружок – лампочка, 12V – источник тока, R1, R2, R3 – резисторы.<br><br> Используйте курсор мыши для выбора кусочка паззла, кликая по нему. Для размещения кусочка на поле кликните на занятую или свободную клетку. Если клетка уже занята, ваш выбранный элемент заменит тот, который там уже находится. ` +  `${this.difficulty === 2 ? 'Для поворота фрагмента паззла используйте стрелки, появляющиеся при выборе. При этом обращаем ваше внимание, что надписи на элементах должны быть правильно ориентированы (читаемы слева направо).' : ''}
+            <br>Главное – действовать быстро и аккуратно, ведь на выполнение уровня у Вас есть всего ` + `${this.difficulty === 0 ? '30' : (this.difficulty === 1 ? '45' : '80')}` + ` секунд.
+            <br>За каждую сэкономленную секунду вы получите дополнительный балл. <br>Изначально у вас есть ` + `${this.difficulty === 2 ? '50' : '30'}` + `  очков, которые убывают на 1 за каждое перемещение ` + `${this.difficulty === 2 ? 'или поворот ' : ''}` + `фрагмента. <br>Если вы исчерпаете свои очки, бонуса за время не будет.
+            <br><br><strong>Управление:</strong><br>
+            Выберите фрагмент паззла, кликнув по нему левой кнопкой мыши.<br>
+            Для отмены выбора кликните по выбранному фрагменту еще раз.<br>
+            Разместите выбранный фрагмент на поле, кликнув на занятую или свободную клетку.<br>
+            <br>Используйте стрелки для поворота выбранного элемента.<br>
+            Желаем удачи и приятной игры!`;
+
+        this.score = (this.difficulty === 2 ? 51 : 31);
         this.reduceScore();
-        this.showDescription('Привет');
+        this.showDescription(description);
 
         // размер паззла зависит от уровня сложности
         const segmentCountX = 3;
@@ -38,7 +50,6 @@ export class Level3 extends Level {
             const arrow = event.target;
             const pic = arrow.elem;
             pic.rotation = ((pic.rotation - 90) % 360 + 360) % 360;
-            console.log(pic.rotation);
             pic.style.transform = `rotate(${pic.rotation}deg)`;
             this.reduceScore();
             this.checkCompletion();
@@ -49,7 +60,6 @@ export class Level3 extends Level {
             const arrow = event.target;
             const pic = arrow.elem;
             pic.rotation = (pic.rotation + 90) % 360;
-            console.log(pic.rotation);
             pic.style.transform = `rotate(${pic.rotation}deg)`;
             this.reduceScore();
             this.checkCompletion();
@@ -89,7 +99,8 @@ export class Level3 extends Level {
                             parent.appendChild(activeImg);
                         }
                         activeImg.classList.remove('img-active');
-                        this.reduceScore();
+                        if (activeImg != segment)
+                            this.reduceScore();
                         this.checkCompletion();
                     }
                     else
@@ -179,21 +190,6 @@ export class Level3 extends Level {
             setInterval(() => {document.dispatchEvent(new Event('levelCompleted'));}, 2000);
         }, {once: true});
         
-        this.addLevelCompleteHandlers();
-        console.log("Это третий уровень " + this.difficulty);
-    }
-    // запускаем таймер на разное время в зависимости от уровня сложности
-    startTimer()
-    {
-        if (this.difficulty === 0)
-            this.runTimer(40);
-        else if (this.difficulty === 1)
-            this.runTimer(35);
-        else
-            this.runTimer(120);
-    }
-    addLevelCompleteHandlers()
-    {
         document.addEventListener('levelCompleted', () => {
             this.stopTimer();
             if (!(this.timeLeft === 0))
@@ -204,6 +200,17 @@ export class Level3 extends Level {
             this.showScore();
         }, {once: true});
     }
+    // запускаем таймер на разное время в зависимости от уровня сложности
+    startTimer()
+    {
+        if (this.difficulty === 0)
+            this.runTimer(30);
+        else if (this.difficulty === 1)
+            this.runTimer(45);
+        else
+            this.runTimer(80);
+    }
+
 
     checkCompletion()
     {

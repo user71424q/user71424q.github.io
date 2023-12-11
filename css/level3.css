@@ -31,4 +31,5 @@
 .arrow-left, .arrow-right {
     position: absolute;
     z-index: 2;
+    user-select: none;
 }
