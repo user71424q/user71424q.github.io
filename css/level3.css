@@ -1,0 +1,34 @@
+.cutted-image{
+    display: inline-block;
+    user-select: none;
+}
+
+.img-active {
+    box-shadow: 0 0 0 5px blue inset; 
+}
+
+.puzzle-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.tile {
+    background-color: rgb(155, 155, 155);
+    box-shadow: 10px 10px rgb(195, 195, 195) inset, -10px -10px rgb(145, 145, 145) inset;
+    align-items: start;
+    justify-content: start;
+}
+
+.pieces {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    column-gap: 40px;
+    row-gap: 20px;
+}
+
+.arrow-left, .arrow-right {
+    position: absolute;
+    z-index: 2;
+}

@@ -1,0 +1,302 @@
+:root
+{
+    --default-photo-size: 100px;
+    --socket-size: 60px;
+}
+
+.photo {
+    width: var(--default-photo-size);
+    height: var(--default-photo-size);
+    position: absolute;
+    user-select: none;
+}
+
+.photo-selected
+{
+    width: var(--socket-size);
+    height: var(--socket-size);
+}
+
+.power-lever
+{
+    width: 150px;
+    height: 200px;
+    bottom: 10%;
+    user-select: none;
+}
+
+.electro-socket {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: var(--socket-size);
+    height: var(--socket-size);
+    border-radius: 50%;
+    background-color: rgb(187, 187, 187);
+}
+
+.hole {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: black;
+}
+
+.electro-socket-container {
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    background-color: grey;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    flex-flow: row wrap;
+}
+
+.electro-socket-panel {
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+}
+
+.cloud{
+    animation: moveFigureInfinity 2s alternate infinite;
+    position: absolute;
+    z-index: 2;
+    width: calc(var(--default-photo-size) * 2);
+    height: calc(var(--default-photo-size) * 1.5);
+    user-select: none;
+}
+
+.path1 {
+    animation: moveTriangle 1s linear infinite;
+}
+
+.path2 {
+    animation: moveOval 3s linear infinite;
+}
+
+.path3 {
+    animation: moveWave 2s linear infinite;
+}
+
+.path4 {
+    animation: moveFigureEight 2.5s linear infinite;
+}
+
+.path5 {
+    animation: moveZigzag 1s linear infinite;
+}
+
+.path6 {
+    animation: moveButterfly 3s linear infinite;
+}
+
+.path7 {
+    animation: moveSquareWave 3s linear infinite;
+}
+
+.path8 {
+    animation: moveCrosswise 3s linear infinite;
+}
+
+.path9 {
+    animation: moveStar 3s alternate infinite;
+}
+
+
+
+
+@keyframes moveTriangle {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    33% {
+        transform: translate(100px, 0);
+    }
+    66% {
+        transform: translate(50px, 86px);
+    }
+}
+
+@keyframes moveOval {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(150px, 50px) rotate(90deg);
+    }
+    50% {
+        transform: translate(200px, 0) rotate(180deg);
+    }
+    75% {
+        transform: translate(150px, -50px) rotate(270deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes moveWave {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    20% {
+        transform: translate(50px, -50px);
+    }
+    40% {
+        transform: translate(100px, 50px);
+    }
+    60% {
+        transform: translate(150px, -50px);
+    }
+    80% {
+        transform: translate(200px, 50px);
+    }
+}
+
+@keyframes moveFigureEight {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    20% {
+        transform: translate(100px, 50px);
+    }
+    40% {
+        transform: translate(200px, 0);
+    }
+    60% {
+        transform: translate(100px, -50px);
+    }
+    80% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes moveZigzag {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(50px, 50px);
+    }
+    50% {
+        transform: translate(100px, 0);
+    }
+    75% {
+        transform: translate(150px, 50px);
+    }
+}
+@keyframes moveButterfly {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    10% {
+        transform: translate(50px, 100px);
+    }
+    20% {
+        transform: translate(150px, 50px);
+    }
+    30% {
+        transform: translate(100px, 150px);
+    }
+    40% {
+        transform: translate(200px, 100px);
+    }
+    50% {
+        transform: translate(150px, 200px);
+    }
+    60% {
+        transform: translate(100px, 150px);
+    }
+    70% {
+        transform: translate(50px, 200px);
+    }
+    80% {
+        transform: translate(0, 150px);
+    }
+    90% {
+        transform: translate(50px, 100px);
+    }
+}
+@keyframes moveSquareWave {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    12.5% {
+        transform: translate(100px, 0);
+    }
+    25% {
+        transform: translate(100px, 100px);
+    }
+    37.5% {
+        transform: translate(0, 100px);
+    }
+    50% {
+        transform: translate(0, 200px);
+    }
+    62.5% {
+        transform: translate(100px, 200px);
+    }
+    75% {
+        transform: translate(100px, 100px);
+    }
+    87.5% {
+        transform: translate(0, 100px);
+    }
+}
+@keyframes moveCrosswise {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    20% {
+        transform: translate(200px, 50px);
+    }
+    40% {
+        transform: translate(100px, 200px);
+    }
+    60% {
+        transform: translate(200px, 150px);
+    }
+    80% {
+        transform: translate(50px, 100px);
+    }
+}
+@keyframes moveStar {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    20% {
+        transform: translate(100px, -50px);
+    }
+    40% {
+        transform: translate(200px, 0);
+    }
+    60% {
+        transform: translate(150px, 100px);
+    }
+    80% {
+        transform: translate(50px, 100px);
+    }
+}
+
+@keyframes moveFigureInfinity {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    20% {
+        transform: translate(50px, 100px);
+    }
+    40% {
+        transform: translate(0, 200px);
+    }
+    60% {
+        transform: translate(-50px, 100px);
+    }
+    80% {
+        transform: translate(0, 0);
+    }
+}

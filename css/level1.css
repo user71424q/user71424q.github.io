@@ -1,0 +1,81 @@
+.circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.square {
+    width: 30px;
+    height: 30px;
+}
+
+.rhombus {
+    width: 30px;
+    height: 30px;
+    transform: rotate(45deg);
+}
+
+.ellipse {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    transform: scale(1.3, 1);
+}
+
+.yellow {
+    border: 5px solid yellow;
+}
+
+.pink {
+    border: 5px solid magenta;
+}
+
+.green {
+    border: 5px solid lime;
+}
+
+.red {
+    border: 5px solid red;
+}
+
+.lightBlue {
+    border: 5px solid lightblue;
+}
+
+.purple {
+    border: 5px solid purple;
+}
+
+.blue {
+    border: 5px solid blue;
+}
+
+.orange {
+    border: 5px solid orange;
+}
+
+.socket-container {
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    background-color: grey;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.wire
+{
+    position: absolute;
+    height: 3px;
+    pointer-events: none;
+}
+
+.connected
+{
+    background-color: lightgreen;
+}
+
+.wrong-connection {
+    background-color: red;
+}

@@ -1,0 +1,83 @@
+.container
+{
+    justify-content: normal;
+}
+
+.rating-table {
+    margin-top: 20px;
+}
+
+#rating-table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+#rating-table th, #rating-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+    text-wrap: nowrap;
+}
+
+#rating-table th {
+    background-color: #2193b0;
+    color: white;
+}
+
+#rating-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#rating-table tr:nth-child(odd) {
+    background-color: #8be7fa;
+}
+
+#rating-table tr:hover {
+    background-color: #ddd;
+}
+
+.difficulty-tabs {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    margin: 0 10px;
+    padding: 15px 30px;
+    cursor: pointer;
+    border: 2px solid white; /* Белая граница */
+    border-radius: 10px; /* Закругленные углы */
+    background-color: rgba(0, 0, 0, 0.4); /* Полупрозрачный фон */
+    color: white; /* Белый текст */
+    transition: all 0.3s ease; /* Плавный эффект при наведении */
+}
+
+.tab-button:hover {
+    background-color: #6dd5ed;
+}
+
+.tab-button.active {
+    background-color: #000000; /* Темнее оттенок для активной кнопки */
+}
+
+.return-button {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    padding: 10px 20px;
+    background-color: #2193b0;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    z-index: 2;
+}
+
+.return-button:hover {
+    background-color: #27a0cc;
+}
+
+/* Остальные стили остаются без изменений */
+

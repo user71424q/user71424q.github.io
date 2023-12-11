@@ -1,0 +1,61 @@
+#control
+{
+    font-size: 24px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px 0;
+    background-color: steelblue;
+    color: white;
+    max-height: 7%;
+}
+#game
+{
+    display: flex;
+    height: 88%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+#back-to-menu
+{
+    padding: 10px 15px;
+    cursor: pointer;
+    border: 2px solid white; /* Белая граница */
+    border-radius: 10px; /* Закругленные углы */
+    background-color: rgba(0, 0, 0, 0.3); /* Полупрозрачный фон */
+    color: white; /* Белый текст */
+    transition: all 0.3s ease; /* Плавный эффект при наведении */
+}
+
+#back-to-menu:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Более заметный фон при наведении */
+}
+
+.modal button
+{
+    margin: 0 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border: 2px solid rgb(0, 0, 0); 
+    border-radius: 10px; /* Закругленные углы */
+    background-color: rgba(0, 0, 0, 0.3); /* Полупрозрачный фон */
+    color: rgb(0, 0, 0); 
+    transition: all 0.3s ease; /* Плавный эффект при наведении */
+}
+
+.modal button:hover{
+    background-color: rgba(0, 255, 0, 0.6); /* Более заметный фон при наведении */
+}
+
+.red-button
+{
+    background-color: rgba(255, 0, 0, 0.4);
+}
+
+.red-button:hover
+{
+    background-color: rgba(255, 0, 0, 0.4);
+}

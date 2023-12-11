@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рейтинг - Игра</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/rating.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Рейтинг игроков</h1>
+        </header>
+        <main>
+            <section class="difficulty-tabs">
+                <button class="tab-button" onclick="filterByDifficulty(0)">Простой</button>
+                <button class="tab-button" onclick="filterByDifficulty(1)">Средний</button>
+                <button class="tab-button" onclick="filterByDifficulty(2)">Сложный</button>
+            </section>
+            <section class="rating-table">
+                <table id="rating-table">
+                    <thead>
+                        <tr>
+                            <th>Место</th>
+                            <th>Имя игрока</th>
+                            <th>Уровень 1</th>
+                            <th>Уровень 2</th>
+                            <th>Уровень 3</th>
+                            <th>Сумма</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Здесь будут добавляться записи через JavaScript -->
+                    </tbody>
+                </table>
+            </section>
+            <a href="../index.html" class="return-button">На главную</a>
+        </main>
+    </div>
+    <footer>Автор - Борис Афанасьев, 2023</footer>
+    <script src="../js/rating.js"></script>
+</body>
+</html>
